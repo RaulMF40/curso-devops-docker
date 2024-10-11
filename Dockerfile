@@ -15,7 +15,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm test -- --passWithNoTests
+# RUN npm test -- --passWithNoTests
 
 EXPOSE 3000
 

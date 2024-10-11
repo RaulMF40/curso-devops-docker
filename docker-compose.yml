@@ -2,11 +2,10 @@ version: '3'
 
 services:
   api:
+    build: .
     image: raulmoya/my-api:1.0.0
     ports:
-      - '3001:3000'
-    volumes:
-      - .:/opt
+      - '3001:3001'
   http-server:
     image: nginx:latest
     ports:
