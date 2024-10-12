@@ -1,12 +1,30 @@
-version: '3'
+version: '3.8'
 
 services:
-  api:
-    build: .
-    # image: raulmoya/my-api:1.0.0
+  mailService:
+    build:
+      context: ./mailService
+    image: raulmoya/mailservice:1.0.0
     ports:
-      - '3001:3001'
-  http-server:
-    image: nginx:latest
+      - '3002:3001'
+    depends_on:
+      - database
+
+  userService:
+    build:
+      context: ./userService
+    image: raulmoya/userservice:1.0.0
     ports:
-      - '8080:80'
+      - '3003:3001'
+    depends_on:
+      - database
+
+  database:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
