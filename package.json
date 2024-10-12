@@ -1,7 +1,7 @@
 {
-  "name": "curso-devops-jenkins",
+  "name": "curso-devops-docker",
   "version": "1.0.0",
-  "description": "Ejercicio 4. día 1/10/24 junto con el docker dia 7/10/24.",
+  "description": "Ejercicio 4. día 8/10/24.",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
