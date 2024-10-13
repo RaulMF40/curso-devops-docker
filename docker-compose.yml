@@ -1,30 +1,26 @@
 version: '3.8'
 
 services:
-  mailService:
-    build:
-      context: ./mailService
-    image: raulmoya/mailservice:1.0.0
-    ports:
-      - '3002:3001'
-    depends_on:
-      - database
-
-  userService:
-    build:
-      context: ./userService
-    image: raulmoya/userservice:1.0.0
-    ports:
-      - '3003:3001'
-    depends_on:
-      - database
-
-  database:
-    image: mongo:latest
+  database-mongo:
+    image: mongo
+    restart: always
     ports:
       - '27017:27017'
-    volumes:
-      - mongo_data:/data/db
-
-volumes:
-  mongo_data:
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+  database-mysql:
+    image: mysql
+    ports:
+      - '3306:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  mail-service:
+    build: ./mailService
+    ports:
+      - '9001:3000'
+  user-service:
+    build: ./userService
+    ports:
+      - '9002:3000'

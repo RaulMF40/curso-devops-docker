@@ -15,8 +15,8 @@ RUN npm install
 
 COPY . .
 
-# RUN npm test -- --passWithNoTests
+RUN npm test
 
-EXPOSE 3001
+EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "start-test"]

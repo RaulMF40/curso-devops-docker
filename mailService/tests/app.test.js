@@ -1,5 +1,5 @@
 const request = require('supertest')
-const app = require('../src/app')
+const app = require('../src/app') // Ajusta la ruta si es necesario
 
 describe('API Tests', () => {
   it('should return Hello World on GET /', async () => {

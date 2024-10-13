@@ -1,7 +1,7 @@
 {
   "name": "curso-devops-docker",
   "version": "1.0.0",
-  "description": "Ejercicio 4. día 8/10/24.",
+  "description": "Ejercicio Docker-Compose",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -11,10 +11,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.5.8"
-  },
-  "dependencies": {
-    "express": "^4.21.1",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   }
