@@ -1,26 +1,10 @@
 version: '3.8'
 
 services:
-  database-mongo:
-    image: mongo
-    restart: always
-    ports:
-      - '27017:27017'
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-  database-mysql:
-    image: mysql
-    ports:
-      - '3306:3306'
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-  mail-service:
-    build: ./mailService
+  volumes-service:
+    container_name: 'contenedor con volumen'
+    build: .
+    volumes:
+      - .:/opt
     ports:
       - '9001:3000'
-  user-service:
-    build: ./userService
-    ports:
-      - '9002:3000'
