@@ -26,4 +26,6 @@ tened en cuenta los PUERTOS y lo ideal es que docker-compose.yml haga el build t
 
 la base de datos debe ser a elección propia.
 
-por tanto en el docker compose yml , tendriamos 3 services: mailService, userService y Database(será compartida por todos los microservicios).
+## por tanto en el docker compose yml , tendriamos 3 services: mailService, userService y Database(será compartida por todos los microservicios).
+
+3 ejercicio. necesitamos tener un wordpress instalado en mi local mediante docker. necesito modificar el docker-compose.yml para que me levante un servicio de wordpress en mi local y poder acceder a el desde mi ordenador. Y además, cuando el wordpress me funcione, necesito modificar el puerto de entrada desde mi maquina.. creamos una rama nueva eliminamos micro servicios (emailService y userService)

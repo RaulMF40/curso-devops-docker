@@ -1,26 +1,30 @@
 version: '3.8'
 
 services:
-  database-mongo:
-    image: mongo
+  wordpress:
+    image: wordpress
     restart: always
     ports:
-      - '27017:27017'
+      - 8080:80
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-  database-mysql:
-    image: mysql
-    ports:
-      - '3306:3306'
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: exampleuser
+      WORDPRESS_DB_PASSWORD: examplepass
+      WORDPRESS_DB_NAME: exampledb
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
-  mail-service:
-    build: ./mailService
-    ports:
-      - '9001:3000'
-  user-service:
-    build: ./userService
-    ports:
-      - '9002:3000'
+      MYSQL_DATABASE: exampledb
+      MYSQL_USER: exampleuser
+      MYSQL_PASSWORD: examplepass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:

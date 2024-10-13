@@ -5,7 +5,7 @@ app.use(express.json())
 
 // Ruta básica
 app.get('/', (req, res) => {
-  res.status(200).json({ message: 'Hello World mailService!' })
+  res.status(200).json({ message: 'Hello World Wordpress!' })
 })
 
 // Ruta de ejemplo para pruebas
