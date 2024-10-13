@@ -2,6 +2,7 @@
   "name": "curso-devops-docker",
   "version": "1.0.0",
   "description": "Ejercicio Docker-Compose",
+  "targetType": "none",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
