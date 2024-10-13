@@ -2,9 +2,8 @@ version: '3.8'
 
 services:
   volumes-service:
-    container_name: 'contenedor con volumen'
     build: .
     volumes:
       - .:/opt
     ports:
-      - '9001:3000'
+      - '9005:3000'

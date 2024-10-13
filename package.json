@@ -2,12 +2,11 @@
   "name": "curso-devops-docker",
   "version": "1.0.0",
   "description": "Ejercicio Docker-Compose-Volumes",
-  "targetType": "none",
   "main": "index.js",
   "scripts": {
+    "start:nodemon": "nodemon src/index.js",
     "start": "node src/index.js",
-    "test": "jest",
-    "start-test": "npm run start && npm test"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +16,7 @@
     "supertest": "^7.0.0"
   },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7"
   }
 }
