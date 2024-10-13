@@ -1,5 +1,5 @@
 {
-  "name": "curso-devops-docker",
+  "name": "curso-devops-docker-wordpress",
   "version": "1.0.0",
   "description": "Ejercicio Docker-Compose",
   "targetType": "none",
