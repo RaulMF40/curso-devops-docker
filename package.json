@@ -1,12 +1,13 @@
 {
   "name": "curso-devops-docker",
   "version": "1.0.0",
-  "description": "Ejercicio Docker-Compose",
+  "description": "Ejercicio Docker-Compose-Volumes",
   "targetType": "none",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "start-test": "npm run start && npm test"
   },
   "keywords": [],
   "author": "",
