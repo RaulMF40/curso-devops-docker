@@ -1,9 +1,17 @@
-version: '3.8'
-
 services:
-  volumes-service:
-    build: .
+  userService:
+    container_name: user-services-volumes
+    build: ./userService
+    image: curso-devops-docker-userservice
     volumes:
-      - .:/opt
+      - ./userService:/opt
     ports:
-      - '9005:3000'
+      - '9006:3000'
+  mailService:
+    container_name: mail-services-volumes
+    build: ./mailService
+    image: curso-devops-docker-mailservice
+    volumes:
+      - ./mailService:/opt
+    ports:
+      - '9007:3000'
